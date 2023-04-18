@@ -1,0 +1,12 @@
+<h1>{{ serializer.data.title }}</h1>
+<p>{{ serializer.data.description }}</p>
+
+{% for lesson in serializer.data.lessons %}
+    <h2>{{ lesson.title }}</h2>
+    <p>{{ lesson.description }}</p>
+    <ul>
+    {% for resource in lesson.resources %}
+        <li>{{ resource.title }} ({{ resource.resource_type }})</li>
+    {% endfor %}
+    </ul>
+{% endfor %}
